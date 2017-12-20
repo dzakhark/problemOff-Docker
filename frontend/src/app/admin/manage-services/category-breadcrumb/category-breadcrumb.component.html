@@ -1,0 +1,11 @@
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item item"
+        [class.active]="i === breadcrumbList.length - 1"
+        [class.btn-link]="i !== breadcrumbList.length - 1"
+        *ngFor="let item of breadcrumbList; let i = index"
+        (click)="selectCategoryName(item)">
+      <span style="display: inline-block" >{{item?.name}}</span>
+    </li>
+  </ol>
+</nav>

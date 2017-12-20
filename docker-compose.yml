@@ -1,0 +1,32 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "4200:4200"
+    expose:
+      - 4200
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    restart: always
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:10.1
+    restart: always
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres

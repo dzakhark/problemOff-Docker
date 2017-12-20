@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <span *ngIf="modalData.action === 'add'">Добавление</span>
+          <span *ngIf="modalData.action === 'delete'">Удаление</span>
+          <span *ngIf="modalData.action === 'edit'">Редактирование</span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div *ngIf="modalData.action === 'add'">
+          <span class="lead">{{modalData?.data?.name || 'Главные категории'}}</span>
+          <form>
+            <div class="form-group">
+              <label for="newName">New name</label>
+              <input type="text" class="form-control" [(ngModel)]="nameOfNewCategory" name="newName" id="newName" placeholder="Enter name of category">
+            </div>
+          </form>
+        </div>
+
+        <div *ngIf="modalData.action === 'delete'">
+          <span>Вы уверены что хотите удалить категорию <strong>{{modalData?.data.name}}</strong>?</span>
+        </div>
+
+        <div *ngIf="modalData.action === 'edit'">
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" *ngIf="modalData.action === 'add'" class="btn btn-primary" data-dismiss="modal" (click)="add()">Add</button>
+        <button type="button" *ngIf="modalData.action === 'delete'" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Delete</button>
+        <button type="button" *ngIf="modalData.action === 'edit'" class="btn btn-primary" data-dismiss="modal">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

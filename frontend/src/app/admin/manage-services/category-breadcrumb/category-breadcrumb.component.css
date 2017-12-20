@@ -1,0 +1,19 @@
+.breadcrumb {
+  height: 48px;
+  margin-top: 20px;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.item:last-child {
+  cursor: default;
+}
+
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+}

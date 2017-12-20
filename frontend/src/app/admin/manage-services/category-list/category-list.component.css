@@ -1,0 +1,50 @@
+.category-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 290px;
+  /*width: 50%;*/
+}
+
+.category-item {
+  display: inline-flex;
+  border: 1px solid gainsboro;
+  align-items: center;
+}
+
+.category-item:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.category-item:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.category-name {
+  padding: 10px;
+  margin-right: 10px;
+  white-space: normal;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.actions {
+  display: flex;
+  padding-right: 5px;
+}
+
+.btn-white:hover {
+  color: #111;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+  cursor: pointer;
+}
+
+.btn-light:hover {
+  cursor: pointer;
+}
+
+.fa-plus {
+  padding-right: 10px;
+}

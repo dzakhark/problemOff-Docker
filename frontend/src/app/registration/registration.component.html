@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-sm-6 col-lg-4 m-auto">
+    <div class="card border-light registration">
+      <div class="card-header text-center h5">
+        Registration
+      </div>
+      <div class="card-body">
+
+        <div *ngIf="isInvalidForm" class="alert alert-warning" role="alert">
+          * - required input
+        </div>
+
+        <div *ngIf="isRegistrationError" class="alert alert-danger" role="alert">
+          User with this email already exists!
+        </div>
+
+        <form [formGroup]="regisForm" (submit)="onRegistration($event)" novalidate>
+
+          <div class="form-group">
+            <label for="firstName">First name</label><span class="red-text"> *</span>
+            <input type="text" class="form-control" id="firstName" placeholder="First name" formControlName="firstName" aria-describedby="firstNameHelp">
+            <small id="firstNameHelp" class="form-text red-text" *ngIf="formErrors.firstName">
+              {{ formErrors.firstName }}
+            </small>
+
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label><span class="red-text"> *</span>
+            <input type="text" class="form-control" id="lastName" placeholder="Last name" formControlName="lastName" aria-describedby="LastNameHelp">
+            <small id="lastNameHelp" class="form-text red-text" *ngIf="formErrors.lastName">
+              {{ formErrors.lastName }}
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label><span class="red-text"> *</span>
+            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text red-text" *ngIf="formErrors.email">
+              {{ formErrors.email }}
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label><span class="red-text"> *</span>
+            <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" aria-describedby="passwordHelp">
+            <small id="passwordHelp" class="form-text red-text" *ngIf="formErrors.password">
+              {{ formErrors.password }}
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="Phone">Phone</label><span class="red-text"> *</span>
+            <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone" aria-describedby="phone" [textMask]="{mask: mask}">
+            <small id="phoneHelp" class="form-text red-text" *ngIf="formErrors.phone">
+              {{ formErrors.phone }}
+            </small>
+          </div>
+
+          <!--<p>* - required input</p>-->
+
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="isInvalidForm">Submit</button>
+
+        </form>
+      </div>
+    </div>
+    <!--card-->
+  </div>
+</div>

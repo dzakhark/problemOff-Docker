@@ -1,0 +1,42 @@
+
+    
+    
+   
+    .dropdown-submenu>a:after{
+        display:block;
+        content:"";
+        float:right; 
+        border-color:transparent;
+        border-style:solid;
+        border-width:5px 0 5px 5px;
+        border-left-color:#cccccc;
+        margin-top:7px;
+        margin-right:-10px;
+    }
+     .div .dropdown-divider:first-child {
+        display: none;
+       
+    }
+    
+    li {
+        list-style-type: none; 
+        cursor: pointer;
+       }
+       ul {
+        margin-left: 0; 
+        padding-left: 0; 
+       }
+
+       #hide {
+        display: flex;
+       }
+       @media screen and (max-width: 500px)  {
+        #hide {
+        flex-direction: column;
+           }
+           .div .dropdown-divider:first-child{
+               display: block;
+           }
+           
+           
+}

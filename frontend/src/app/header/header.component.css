@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+  padding: 5px 5px;
+  background-color: #cbcbcb;
+}
+
+/*@media (min-width: 992px) and (max-width: 1199px) {*/
+  /*.dropdown {*/
+    /*order: 1;*/
+  /*}*/
+/*}*/
+
+.navbar-brand {
+  font-size: 1.65rem;
+  color: black;
+  margin-right: 0px;
+}
+
+.fa-user {
+  font-size: 1.8rem;
+  padding-right: 7px;
+}
+
+.btn-user {
+  display: flex;
+  align-items: center;
+}
+
+.user-inf {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-align: left;
+  width: 80px;
+}
+
+@media (max-width: 575px) {
+  .btns {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+

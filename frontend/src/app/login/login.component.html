@@ -1,0 +1,45 @@
+<div class="row justify-content-around">
+  <div class="col-sm-6 col-md-5 col-lg-4 login-col">
+    <div class="card border-light">
+      <div class="card-header text-center h5">
+        Log in
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (submit)="onLogin()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Login</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Login" formControlName="login">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password">
+          </div>
+
+          <div class="alert alert-warning text-center" role="alert" [style.display]="loginError ? 'block' : 'none'">
+            Login or password is invalid,<br> try again
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="isDisable">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-5 col-lg-4">
+    <div class="card border-light registration">
+
+      <div class="card-header text-center h5">
+        Registration
+      </div>
+
+      <div class="card-body">
+        <div class="row m-0 align-self-center">
+          <h4 class="card-title">No account? Join us!</h4>
+          <p class="card-text text-muted">After registration, you will have the opportunity to perform tasks and order services on the ProblemOff.</p>
+          <button class="btn btn-primary btn-block" (click)="goToRegistration()">Registration</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.card-body .row{
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.error-login-help {
+  color: red;
+}
+
+.alert-warning {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.login-col {
+  padding-bottom: 25px;
+}
+
+

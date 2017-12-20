@@ -1,0 +1,14 @@
+/*!* You can add global styles to this file, and also import other style files *!*/
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  /*background-color: #f8f9fa;*/
+  margin-bottom: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+

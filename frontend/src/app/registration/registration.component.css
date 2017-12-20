@@ -1,0 +1,13 @@
+button {
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.red-text {
+  color: red;
+}
+
+input:focus {
+  /*background: #FA6;*/
+  /*outline: none;  !* убрать рамку *!*/
+}

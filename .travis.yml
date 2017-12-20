@@ -1,0 +1,14 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+
+before_script:
+  - docker-compose up --build -d
+
+script:
+  - ./tests/test-api.sh
+
+after_script:
+  - docker-compose down

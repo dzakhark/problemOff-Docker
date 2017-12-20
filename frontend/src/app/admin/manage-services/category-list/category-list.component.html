@@ -1,0 +1,20 @@
+<div class="category-list col-sm-12 col-md-6 col-lg-5 p-0" *ngIf="inputCategory?.subCategories">
+  <div class="category-item" *ngFor="let item of inputCategory.subCategories">
+    <div class="category-name" (click)="selected(item)">
+      {{item.name}}
+    </div>
+    <div class="ml-auto actions">
+      <div class="btn btn-white" data-toggle="modal" data-target="#exampleModal" (click)="edit(item)">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </div>
+      <div class="btn btn-white" data-toggle="modal" data-target="#exampleModal" (click)="delete(item)">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="btn btn-light" (click)="add(inputCategory)" data-toggle="modal" data-target="#exampleModal">
+    <i class="fa fa-plus" aria-hidden="true"></i><span>Add</span>
+  </div>
+</div>
+
+<app-modal [modalData]="dataForModal"></app-modal>

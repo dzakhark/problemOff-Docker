@@ -1,0 +1,20 @@
+<div class="dropdown" *ngIf='categoriesArray.length'>
+  <ul class="dropdown-menu" id="hide" (mouseleave)="hideList()">
+    <li  *ngFor="let item of categoriesArray; let i = index" >
+      <ul class="category">
+        <div class='div' *ngIf="i > 0" >
+            <div class='dropdown-divider'></div>
+          <li><a class="dropdown-item">Показать все</a></li>
+          <div class="dropdown-divider"></div>
+        </div>
+        <li  [ngClass]="{'dropdown-submenu': item2.subCategories.length > 0}"
+             *ngFor="let item2 of item"
+             (click)="goToSubCategory(item2, i)"
+             (click)="getViewAll(item2.subCategories.length, i)">
+          <a class="dropdown-item">{{item2.name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
